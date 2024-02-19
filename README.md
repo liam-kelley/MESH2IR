@@ -3,6 +3,8 @@
 This is the official implementation of our mesh-based neural network ([**MESH2IR**](https://arxiv.org/pdf/2205.09248.pdf)) to generate acoustic impulse responses (IRs) for indoor 3D scenes represented
 using a mesh. Our Neural Sound Rendering results is available [**here**](https://anton-jeran.github.io/M2IR/).
 
+**NEWS: We release MULTI-CHANNEL MULTI-SPEAKER MULTI-SPATIAL AUDIO CODEC. The official code of our network [**M3-AUDIODEC**](https://github.com/anton-jeran/MULTI-AUDIODEC) is available.** 
+
 ## Requirements
 
 ```Python
@@ -24,6 +26,8 @@ python -m pip install pymeshlab
 python -m pip install openmesh
 python -m pip install gdown
 python -m pip install matplotlib
+python -m pip install IPython
+python -m pip install pydub
 <!-- conda install torch-scatter torch-sparse torch-cluster torch-spline-conv-c pyg -c nvidia  -->
 
 ```
@@ -77,13 +81,31 @@ python3 embed_generator.py
 
 ```
 
-Generate IRs corresponds to each embedding files inside **Embeddings** folder using the following command.
+Generate IRs corresponding to each embedding file inside **Embeddings** folder using the following command.
 
 ```bash
 
 python3 evaluate.py
 
 ```
+
+## Auralize
+
+To create auralize 3 muted videos provided inside **evaluate/Video**, run the following commands
+
+```
+python3 auralize.py
+./make_videos.sh
+```
+
+The three auralized videos can be found inside **evaluate/Output**
+
+## Multi_Channel IRs
+To generate Multi_Channel IRs for Custom Microphone array. Open **evaluate_array.py**, specify your custom array geometry in **Line 100** (In our example script we have provided a custom six-channel array) and run the following command.
+```
+python3 evaluate_array.py
+```
+
 
 You can find generated IRs inside the **Output** folder.
 
