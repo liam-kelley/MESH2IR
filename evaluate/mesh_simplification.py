@@ -29,7 +29,7 @@ for subdir,dir,files in os.walk(path):
 
 
          
-            ms.apply_filter('simplification_quadric_edge_collapse_decimation', targetfacenum=TARGET_Faces, preservenormal=True)
+            ms.apply_filter('meshing_decimation_quadric_edge_collapse', targetfacenum=TARGET_Faces, preservenormal=True)
             print("Decimated to", TARGET_Faces, "faces mesh has", ms.current_mesh().vertex_number(), "vertex")
            
 
