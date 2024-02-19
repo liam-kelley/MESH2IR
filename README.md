@@ -16,7 +16,7 @@ python -m pip install pandas
 python -m pip install scipy
 python -m pip install librosa
 python -m pip install easydict
-python -m pip install cupy-cuda121
+python -m pip install cupy-cuda12x
 python -m pip install wavefile
 python -m pip install torchfile
 python -m pip install pyyaml==5.4.1
