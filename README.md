@@ -5,37 +5,40 @@ using a mesh. Our Neural Sound Rendering results is available [**here**](https:/
 
 ## Requirements
 
-```
-Python3.6
-pip3 install numpy
-pip3 install torch
-pip3 install torchvision
-pip3 install python-dateutil
-pip3 install soundfile
-pip3 install pandas
-pip3 install scipy
-pip3 install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.10.0+cu102.html
-pip3 install librosa
-pip3 install easydict
-pip3 install cupy-cuda102
-pip3 install wavefile
-pip3 install torchfile
-pip3 install pyyaml==5.4.1
-pip3 install pymeshlab
-pip install openmesh
-pip3 install gdown
-pip3 install matplotlib
+```Python
+
+conda create -n mesh2ir python=3.9
+conda install numpy
+conda install pytorch torchvision torchaudio pyg pytorch-cuda=12.1 -c pytorch -c nvidia -c pyg
+python -m pip install python-dateutil
+python -m pip install soundfile
+python -m pip install pandas
+python -m pip install scipy
+python -m pip install librosa
+python -m pip install easydict
+python -m pip install cupy-cuda102
+python -m pip install wavefile
+python -m pip install torchfile
+python -m pip install pyyaml==5.4.1
+python -m pip install pymeshlab
+python -m pip install openmesh
+python -m pip install gdown
+python -m pip install matplotlib
+<!-- conda install torch-scatter torch-sparse torch-cluster torch-spline-conv-c pyg -c nvidia  -->
 
 ```
+
 Please note that, in the above requirements we intalled and tested on cupy library and torch-geometric library compbatible with CUDAv10.2. For different CUDA version, you can find the appropiate installation commands here.
 
 ```
+
 1) https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html
 2) https://docs.cupy.dev/en/stable/install.html
 
 ```
 
 ## Download Data
+
 Please follow the instructions and sign the agreements in this [**link**](https://dlr-rm.github.io/BlenderProc/examples/datasets/front_3d/README.html?msclkid=f7bd359dc76411eca640dbcac3538f68) before downloading any files related to [**3D-FRONT dataset**](https://tianchi.aliyun.com/specials/promotion/alibaba-3d-scene-dataset).  
 
 
