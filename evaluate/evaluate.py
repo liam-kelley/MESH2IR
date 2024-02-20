@@ -10,6 +10,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 import torch.optim as optim
 from torch_geometric.loader import DataLoader
+import copy
 
 import numpy as np
 import cupy as cp
@@ -73,7 +74,14 @@ def load_network_stageI(netG_path,mesh_net_path):
             state_dict = \
                 torch.load(mesh_net_path,
                            map_location=lambda storage, loc: storage)
-            mesh_net.load_state_dict(state_dict)
+            change_dict = {"pool1.weight":"pool1.select.weight",
+                           "pool2.weight":"pool2.select.weight",
+                           "pool3.weight":"pool3.select.weight"}
+            state_dict_torch121 = {}
+            for k,v in state_dict.items():
+                if k in change_dict.keys(): state_dict_torch121[change_dict[k]] = v
+                else: state_dict_torch121[k] = v
+            mesh_net.load_state_dict(state_dict_torch121)
             print('Load from: ', mesh_net_path)
 
 
