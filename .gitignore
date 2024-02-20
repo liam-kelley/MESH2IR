@@ -1,6 +1,9 @@
+__pycache__
+
 evaluate/Embeddings/
 evaluate/Mesh_Graphs/
 evaluate/Meshes/
 evaluate/Models/
 evaluate/Paths/
 evaluate/Simplified_Meshes/
+evaluate/Output/
